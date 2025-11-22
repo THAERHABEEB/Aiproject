@@ -381,6 +381,83 @@
     }
 
     @media (max-width:491px) {
+      /* تحسينات الشاتبوت للموبايل (أقل من 491 بكسل) */
+
+  .nefertiti-chatbot {
+    width: calc(100vw - 30px) !important;
+    max-width: none !important;
+    left: 15px !important;
+    right: 15px !important;
+    bottom: 15px !important;
+    border-radius: 20px;
+  }
+
+  .nefertiti-chatbot.open {
+    height: calc(100vh - 100px) !important;     /* يملأ الشاشة من غير ما يغطي الأزرار السفلية */
+    bottom: 80px !important;                   /* عشان الـ FAB يفضل ظاهر تحت */
+    border-radius: 20px 20px 0 0 !important;   /* زي واتساب بالظبط */
+  }
+
+  .chatbot-header {
+    padding: 12px 16px;
+  }
+
+  .nefertiti-avatar {
+    width: 42px;
+    height: 42px;
+  }
+
+  .chatbot-title {
+    font-size: 1.15rem;
+  }
+
+  .chatbot-status {
+    font-size: 0.8rem;
+  }
+
+  .message {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    max-width: 85%;
+  }
+
+  .chatbot-body {
+    padding: 12px;
+  }
+
+  #chatbotInput {
+    padding: 12px 16px;
+    font-size: 1rem;     /* مهم عشان الكيبورد ما يقفلش الصفحة */
+  }
+
+  #sendBtn {
+    width: 46px;
+    height: 46px;
+  }
+
+  /* زر الـ FAB على الموبايل */
+  .chatbot-fab {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .fab-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .chatbot-fab i {
+    font-size: 1.8rem;
+  }
+
+  /* لما الشاتبوت مفتوح نخفي الـ FAB */
+  .nefertiti-chatbot.open ~ .chatbot-fab,
+  .nefertiti-chatbot.open + .chatbot-fab {
+    display: none !important;
+  }
+
        nav{ flex-direction:column; gap:1rem; margin-right:10px; margin-top:15px; }
        nav a{font-size:0.7rem}
 
@@ -394,10 +471,7 @@
         #searchInput{
             width: 100%;padding: 1rem 20px 1rem 3rem; border-radius: 50px; border: none; font-size: 1rem; background: var(--slate); color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-      .nefertiti-chatbot {
-        width:250px;
-        height:390px;
-      }
+      
     }
 
   </style>
@@ -861,6 +935,7 @@ document.getElementById('chatbotInput').addEventListener('keypress', (e) => {
 </body>
 
 </html>
+
 
 
 
