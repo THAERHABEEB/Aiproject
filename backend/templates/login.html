@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>نفرتيتي كوميرس – بوابة الملوك الذهبية</title>
+    <meta name="description" content="أفخم متجر إلكتروني عربي – متجر نفرتيتي كوميرس الرسمي" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=El+Messiri:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        :root {
+            --navy: #0F172A;
+            --slate: #1E293B;
+            --amber: #F59E0B;
+            --emerald: #ECFDF5;
+            --gold-gradient: linear-gradient(135deg, #F59E0B, #FDE68A);
+            --dark-gradient: linear-gradient(135deg, #0F172A, #1E293B);
+            --success: #10B981;
+            --error: #EF4444;
+            --warning: #FBBF24;
+            --highlight: rgba(245, 158, 11, 0.15);
+            --text: #ffffff;
+            --input-bg: rgba(30, 41, 59, 0.3);
+            --input-border: rgba(245, 158, 11, 0.3);
+            --input-focus: rgba(245, 158, 11, 0.2);
+            --bg-color: rgba(15, 23, 42, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--dark-gradient);
+            background-attachment: fixed;
+            color: #fff;
+            min-height: 100vh;
+            min-height: 100dvh;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 15% 85%, rgba(245, 158, 11, 0.35), transparent 45%),
+                radial-gradient(circle at 85% 15%, rgba(217, 119, 6, 0.25), transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.12), transparent 70%);
+            animation: floatGlow 22s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            margin: 0;
+            pointer-events: none;
+        }
+
+        @keyframes floatGlow {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(20px, -20px) scale(1.03);
+            }
+        }
+
+        .glass-form {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            max-height: 600px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 60px rgba(245, 158, 11, 0.3);
+            z-index: 10;
+            animation: enterRoyal 1.2s ease-out forwards;
+        }
+
+        @keyframes enterRoyal {
+            0% {
+                transform: translateY(50px) scale(0.95);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .glass-filter,
+        .glass-overlay,
+        .glass-specular {
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+        }
+
+        .glass-filter {
+            z-index: 1;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            filter: url(#glass-distortion) saturate(120%) brightness(1.1);
+        }
+
+        .glass-overlay {
+            z-index: 2;
+            background: var(--bg-color);
+        }
+
+        .glass-specular {
+            z-index: 3;
+            box-shadow: inset 1px 1px 1px var(--highlight);
+        }
+
+        .glass-content {
+            position: relative;
+            z-index: 4;
+            padding: 40px;
+            color: var(--text);
+            height: 100%;
+            max-height: 600px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .glass-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .glass-content::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 10px;
+        }
+
+        .glass-content::-webkit-scrollbar-thumb {
+            background: var(--amber);
+            border-radius: 10px;
+        }
+
+        .glass-content::-webkit-scrollbar-thumb:hover {
+            background: #FBBF24;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo-crown {
+            font-size: 4rem;
+            color: var(--amber);
+            text-shadow: 0 0 50px rgba(245, 158, 11, 0.7);
+            animation: crownFloat 6s infinite ease-in-out;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        @keyframes crownFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(-8deg);
+            }
+            50% {
+                transform: translateY(-12px) rotate(8deg);
+            }
+        }
+
+        .header h1 {
+            font-family: 'El Messiri', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-container {
+            display: none;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .form-container.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(217, 119, 6, 0.12));
+            border: 2px solid var(--warning);
+            border-radius: 16px;
+            padding: 0.9rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: #FDE68A;
+            box-shadow: 0 0 25px rgba(251, 191, 36, 0.3);
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+            
+        }
+
+        .form-group i {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--amber);
+            opacity: 0.9;
+            font-size: 1.3rem;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 45px 14px 18px;
+            background: var(--input-bg);
+            border: 1.5px solid var(--input-border);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            background: var(--input-focus);
+            border-color: var(--amber);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .form-group input.error {
+            border-color: var(--error);
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+        }
+
+        .error-msg {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 6px;
+            text-align: right;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: block;
+            min-height: 20px;
+        }
+
+        .error-msg.show {
+            opacity: 1;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold-gradient);
+            border: 1px solid rgba(245, 158, 11, 0.5);
+            border-radius: 12px;
+            color: var(--navy);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            font-family: 'Cairo', sans-serif;
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4);
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        button[type="submit"]:hover {
+            background: linear-gradient(135deg, #FBBF24, #FCD34D);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(245, 158, 11, 0.5);
+        }
+
+        button[type="submit"]:active {
+            transform: translateY(-1px);
+        }
+
+        button[type="submit"].loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        button[type="submit"].loading::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border: 3px solid var(--navy);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            right: 50%;
+            top: 50%;
+            margin: -12px -12px 0 0;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .form-switch {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .form-switch a {
+            color: var(--amber);
+            text-decoration: none;
+            font-weight: 700;
+            opacity: 1;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .form-switch a:hover {
+            text-decoration: underline;
+            color: #FBBF24;
+        }
+
+        .success-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            padding: 3rem 4rem;
+            border-radius: 32px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 40px 100px rgba(16, 185, 129, 0.8);
+            z-index: 9999;
+            border: 4px solid #fff;
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .success-message.show {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .success-message i {
+            font-size: 4.5rem;
+            display: block;
+            margin-bottom: 1rem;
+            animation: jump 2s infinite;
+        }
+
+
+        @keyframes jump {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .glass-form {
+                width: 92vw;
+                max-width: 100%;
+                border-radius: 20px;
+            }
+
+            .glass-content {
+                padding: 24px 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .logo-crown {
+                font-size: 3rem;
+            }
+
+            button[type="submit"] {
+                font-size: 1rem;
+                padding: 12px;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .glass-form {
+                width: 75vw;
+                max-width: 480px;
+            }
+
+            .glass-content {
+                padding: 32px 28px;
+            }
+
+            .header h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .glass-form {
+                width: 55vw;
+                max-width: 500px;
+            }
+
+            .glass-content {
+                padding: 36px 32px;
+            }
+        }
+
+        @media (min-width: 1441px) {
+            .glass-form {
+                width: clamp(480px, 40vw, 540px);
+                border-radius: 28px;
+            }
+
+            .glass-content {
+                padding: 40px;
+            }
+
+            .header h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .form-group input {
+                font-size: 16px !important;
+            }
+        }
+
+        .fas{
+            margin-right:380px;
+            margin-bottom:30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- SVG Filter for Glass Distortion -->
+    <svg style="display: none">
+        <filter id="glass-distortion">
+            <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
+        </filter>
+    </svg>
+
+    <div class="success-message" id="successMsg">
+        <i class="fas fa-crown"></i>
+        <div id="successText">أهلاً بيك يا ملك!</div>
+        <small>جاري فتح بوابة نفرتيتي الذهبية...</small>
+    </div>
+
+    <div class="glass-form">
+        <div class="glass-filter"></div>
+        <div class="glass-overlay"></div>
+        <div class="glass-specular"></div>
+        <div class="glass-content">
+            <div class="header">
+                
+                <h1>نفرتيتي كوميرس</h1>
+                <p>البوابة الذهبية للملوك فقط</p>
+            </div>
+
+            <div class="form-container active" id="loginForm">
+                <div class="warning-box" id="noAccountWarning" style="display:none;">
+                    ما عندكش تاج؟ لازم تسجل الأول يا صاحب الجلالة!
+                </div>
+
+                <form id="login-form" novalidate>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="login-email" placeholder="بريدك الملكي" required>
+                        <div class="error-msg">البريد الإلكتروني غير صحيح</div>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-password" placeholder="كلمة السر السرية" required>
+                        <div class="error-msg">كلمة السر قصيرة جدًا</div>
+                    </div>
+                    <button type="submit">دخول فوري للقصر</button>
+                </form>
+
+                <div class="form-switch text-center">
+                    ما عندكش تاج بعد؟ <a href="#" onclick="switchForm('register'); return false;">سجل وارتدِ التاج</a>
+                </div>
+            </div>
+
+            <div class="form-container" id="registerForm">
+                <div class="warning-box">
+                    مرحبًا بملك جديد في نفرتيتي كوميرس
+                </div>
+
+                <form id="register-form" novalidate>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" id="reg-username" placeholder="اسمك الملكي" required minlength="3">
+                        <div class="error-msg">الاسم لازم 3 أحرف على الأقل</div>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="reg-email" placeholder="بريدك الملكي" required>
+                        <div class="error-msg">البريد الإلكتروني غير صحيح</div>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="reg-password" placeholder="كلمة سر قوية (8+)" required minlength="8">
+                        <div class="error-msg">كلمة السر لازم 8 أحرف على الأقل</div>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="reg-confirm" placeholder="تأكيد كلمة السر" required>
+                        <div class="error-msg">كلمة السر غير متطابقة</div>
+                    </div>
+                    <button type="submit">ارتدِ التاج وادخل</button>
+                </form>
+
+                <div class="form-switch text-center">
+                    عندك تاج بالفعل؟ <a href="#" onclick="switchForm('login'); return false;">ادخل من هنا يا جلالة الملك</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        if (localStorage.getItem('nefertiti_logged_in') === 'true') {
+            document.getElementById('successText').textContent = "أهلاً بعودتك يا صاحب التاج!";
+            document.getElementById('successMsg').classList.add('show');
+            setTimeout(() => location.href = "index.html", 2800);
+        } else if (!localStorage.getItem('nefertiti_user')) {
+            switchForm('register');
+        }
+
+        function switchForm(type) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+
+            if (type === 'login') {
+                registerForm.style.opacity = '0';
+                registerForm.style.transform = 'translateX(-20px)';
+                
+                setTimeout(() => {
+                    registerForm.classList.remove('active');
+                    loginForm.classList.add('active');
+                    
+                    setTimeout(() => {
+                        loginForm.style.opacity = '1';
+                        loginForm.style.transform = 'translateX(0)';
+                    }, 50);
+                }, 300);
+            } else {
+                loginForm.style.opacity = '0';
+                loginForm.style.transform = 'translateX(20px)';
+                
+                setTimeout(() => {
+                    loginForm.classList.remove('active');
+                    registerForm.classList.add('active');
+                    
+                    setTimeout(() => {
+                        registerForm.style.opacity = '1';
+                        registerForm.style.transform = 'translateX(0)';
+                    }, 50);
+                }, 300);
+            }
+        }
+
+        function showSuccess(msg) {
+            document.getElementById('successText').textContent = msg;
+            document.getElementById('successMsg').classList.add('show');
+        }
+
+        function setError(id, show, msg = '') {
+            const input = document.getElementById(id);
+            const error = input.parentElement.querySelector('.error-msg');
+            input.classList.toggle('error', show);
+            error.classList.toggle('show', show);
+            if (msg) error.textContent = msg;
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Mouse move effect for glass specular highlight
+        const glassForm = document.querySelector('.glass-form');
+        const glassSpecular = document.querySelector('.glass-specular');
+        
+        if (glassForm && glassSpecular) {
+            glassForm.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                glassSpecular.style.background = `radial-gradient(
+                    circle at ${x}px ${y}px,
+                    rgba(245, 158, 11, 0.2) 0%,
+                    rgba(245, 158, 11, 0.05) 30%,
+                    rgba(255, 255, 255, 0) 60%
+                )`;
+            });
+
+            glassForm.addEventListener('mouseleave', function() {
+                glassSpecular.style.background = 'none';
+            });
+        }
+
+        document.getElementById('login-form').onsubmit = function (e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value.trim();
+            const pass = document.getElementById('login-password').value;
+            let valid = true;
+
+            if (!isValidEmail(email)) { setError('login-email', true); valid = false; } else setError('login-email', false);
+            if (pass.length < 6) { setError('login-password', true); valid = false; } else setError('login-password', false);
+
+            if (!valid) return;
+
+            const user = JSON.parse(localStorage.getItem('nefertiti_user') || '{}');
+            if (user.email === email && user.password === pass) {
+                localStorage.setItem('nefertiti_logged_in', 'true');
+                this.querySelector('button').classList.add('loading');
+                showSuccess("أهلاً بعودتك يا ملك مصر!");
+                setTimeout(() => location.href = "index.html", 3000);
+            } else {
+                document.getElementById('noAccountWarning').style.display = 'block';
+                setTimeout(() => switchForm('register'), 1800);
+            }
+        };
+
+        document.getElementById('register-form').onsubmit = function (e) {
+            e.preventDefault();
+            const name = document.getElementById('reg-username').value.trim();
+            const email = document.getElementById('reg-email').value.trim();
+            const pass = document.getElementById('reg-password').value;
+            const confirm = document.getElementById('reg-confirm').value;
+            let valid = true;
+
+            if (name.length < 3) { setError('reg-username', true); valid = false; } else setError('reg-username', false);
+            if (!isValidEmail(email)) { setError('reg-email', true); valid = false; } else setError('reg-email', false);
+            if (pass.length < 8) { setError('reg-password', true); valid = false; } else setError('reg-password', false);
+            if (pass !== confirm) { setError('reg-confirm', true); valid = false; } else setError('reg-confirm', false);
+
+            if (!valid) return;
+
+            localStorage.setItem('nefertiti_user', JSON.stringify({ username: name, email, password: pass }));
+            localStorage.setItem('nefertiti_logged_in', 'true');
+
+            this.querySelector('button').classList.add('loading');
+            showSuccess(`أهلاً بيك يا ${name} الملك الأعظم!`);
+            setTimeout(() => location.href = "index.html", 3200);
+        };
+    </script>
+</body>
+
+</html>
