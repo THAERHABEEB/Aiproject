@@ -9,7 +9,6 @@
   <meta property="og:image" content="https://iili.io/f3U9zQe.md.png" />
   <meta property="og:url" content="نفرتيتي كوميرس – المتجر الذكي اللي بيفهمك https://share.google/Rf85YCysgdds1BSuB" />
   <meta property="og:type" content="website" />
-  
   <meta name="description" content="أول متجر إلكتروني عربي يفهم العامية ويشتغل بالذكاء الاصطناعي – نفرتيتي كوميرس"/>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=El+Messiri:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
@@ -17,6 +16,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
   <style>
     :root {
       --navy: #0F172A;
@@ -347,6 +347,8 @@
   color: var(--navy);
 }
 
+
+
      
     
     @media (max-width:1444px){
@@ -379,91 +381,12 @@
         .input-frame{
             max-width: 600px;
         }
-        
-      #searchInput{
-        width: 100%; 
-      }
-      
+        #searchInput{
+            width: 100%;
+        }
     }
 
     @media (max-width:491px) {
-      /* تحسينات الشاتبوت للموبايل (أقل من 491 بكسل) */
-
-  .nefertiti-chatbot {
-    width: calc(100vw - 30px) !important;
-    max-width: none !important;
-    left: 15px !important;
-    right: 15px !important;
-    bottom: 15px !important;
-    border-radius: 20px;
-  }
-
-  .nefertiti-chatbot.open {
-    height: calc(80vh - 100px) !important;     /* يملأ الشاشة من غير ما يغطي الأزرار السفلية */
-    bottom: 80px !important;                   /* عشان الـ FAB يفضل ظاهر تحت */
-    border-radius: 20px 20px !important;   /* زي واتساب بالظبط */
-  }
-
-  .chatbot-header {
-    padding: 12px 16px;
-  }
-
-  .nefertiti-avatar {
-    width: 42px;
-    height: 42px;
-  }
-
-  .chatbot-title {
-    font-size: 1.15rem;
-  }
-
-  .chatbot-status {
-    font-size: 0.8rem;
-  }
-
-  .message {
-    padding: 10px 14px;
-    font-size: 0.95rem;
-    max-width: 85%;
-  }
-
-  .chatbot-body {
-    padding: 12px;
-  }
-
-  #chatbotInput {
-    padding: 12px 16px;
-    font-size: 1rem;     /* مهم عشان الكيبورد ما يقفلش الصفحة */
-  }
-
-  #sendBtn {
-    width: 46px;
-    height: 46px;
-  }
-
-  /* زر الـ FAB على الموبايل */
-  .chatbot-fab {
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .fab-avatar {
-    width: 50px;
-    height: 50px;
-  }
-
-  .chatbot-fab i {
-    font-size: 1.8rem;
-  }
-
-  /* لما الشاتبوت مفتوح نخفي الـ FAB */
-  .nefertiti-chatbot.open ~ .chatbot-fab,
-  .nefertiti-chatbot.open + .chatbot-fab {
-    display: none !important;
-  }
-
        nav{ flex-direction:column; gap:1rem; margin-right:10px; margin-top:15px; }
        nav a{font-size:0.7rem}
 
@@ -475,12 +398,16 @@
             max-width: 400px;
         }
         #searchInput{
-            width: 100%;padding: 1rem 20px 1rem 3rem; border-radius: 50px; border: none; font-size: 1rem; background: var(--slate); color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 100%;
         }
-      
     }
 
   </style>
+  
+
+<style>
+
+</style>
 </head>
 <body>
 
@@ -527,6 +454,7 @@
       
       <i class="fas fa-search" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--amber); font-size: 1.8rem;"></i>
     </div>
+    
 
     <!-- أزرار الفلترة -->
     <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem;">
@@ -539,22 +467,22 @@
   <!-- ======================== نهاية البار ======================== -->
     <div class="products-grid">
       <!-- Product 1 -->
-      <div  class="product-card" data-category="shoes" onclick="showProduct(1)">
+      <div  class="product-card" data-category="shoes" onclick="showProduct(2)">
         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3" alt="جزمة نايك"/>
         <div class="product-info">
           <h3>جزمة نايك أير فورس الأصلية</h3>
-          <div class="price">٤٩٩ جنيه</div>
+          <div class="price">499 جنيه</div>
           <button class="btn-add" >أضف للسلة</button>
           
         </div>
         
       </div>
       <!-- Product 2 -->
-      <div class="product-card" data-category="headphones" onclick="showProduct(2)">
+      <div class="product-card" data-category="headphones" onclick="showProduct(1)">
         <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3" alt="سماعة"/>
         <div class="product-info">
           <h3>سماعة سوني WH-1000XM5</h3>
-          <div class="price">٨٩٩٩ جنيه</div>
+          <div class="price">8999 جنيه</div>
           <button class="btn-add">أضف للسلة</button>
         </div>
       </div>
@@ -563,7 +491,7 @@
         <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3" alt="ساعة"/>
         <div class="product-info">
           <h3>ساعة آبل ووتش الترا 2</h3>
-          <div class="price">٢٩٩٩ جنيه</div>
+          <div class="price">2999 جنيه</div>
           <button class="btn-add">أضف للسلة</button>
         </div>
       </div>
@@ -572,7 +500,7 @@
         <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3" alt="لاب توب"/>
         <div class="product-info">
           <h3>لاب توب ماك بوك برو M3 برو</h3>
-          <div class="price">٩٩٩ جنيه</div>
+          <div class="price">999 جنيه</div>
           <button class="btn-add">أضف للسلة</button>
         </div>
       </div>
@@ -580,7 +508,7 @@
         <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3" alt="حذاء"/>
         <div class="product-info">
           <h3>جزمة لويس فيتون أصلية جلد طبيعي</h3>
-          <div class="price">٨٩٠٠ جنيه</div>
+          <div class="price">8900 جنيه</div>
           <button class="btn-add">أضف للسلة</button>
         </div>
       </div>
@@ -588,10 +516,19 @@
         <img src="https://cdn.salla.sa/mQYoBq/9c7a27df-fc52-478c-86dc-4979a7ed8414-500x500-tSNdTmjrnze9ecbLawVYl5dngn66qCTxBCyBRrn0.jpg" alt="لويس فيتون"/>
       <div class="product-info">
         <h3>جزمة لويس فيتون LV Trainer أبيض</h3>
-        <div class="price">٥٨٩٠٠ جنيه</div>
+        <div class="price">58900 جنيه</div>
         <button class="btn-add">أضف للسلة</button>
       </div>
     </div>
+    <div class="product-card" data-category="shoes" onclick="showProduct(7)">
+        <img src="data:image/webp;base64,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" alt="Adidas"/>
+      <div class="product-info">
+        <h3>Adidas Ultraboost 22</h3>
+        <div class="price">1010 جنيه</div>
+        <button class="btn-add">أضف للسلة</button>
+      </div>
+      </div>
+
     
 
 </div>
@@ -728,14 +665,14 @@
     window.showProduct = function(id) {
       const products = [
         null,
-        {title:"جزمة نايك أير فورس الأصلية", price:"٤٩٩ جنيه", img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff"},
-        {title:"سماعة سوني WH-1000XM5", price:"٨٩٩٩ جنيه", img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e"},
-        {title:"ساعة آبل ووتش الترا 2", price:"٢٩٩٩٩ جنيه", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30"},
-        {title:"لاب توب ماك بوك برو M3 برو", price:"٨٩٩٩٩ جنيه", img:"https://images.unsplash.com/photo-1546868871-7041f2a55e12"},
-        {title:"جزمة لويس فيتون أصلية جلد طبيعي", price:"٤٨٩٠٠ جنيه", img:"https://images.unsplash.com/photo-1560769629-975ec94e6a86"},
-        {title: "جزمة لويس فيتون LV Trainer أبيض", price: "٥٨٩٠٠ جنيه", img: "https://cdn.salla.sa/mQYoBq/9c7a27df-fc52-478c-86dc-4979a7ed8414-500x500-tSNdTmjrnze9ecbLawVYl5dngn66qCTxBCyBRrn0.jpg"},
-
-        {title: "جزمة نايك أير فورس 1 أبيض كلاسيك", price: "٤٩٩ جنيه", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"},
+        {title:"سماعة سوني WH-1000XM5", price:"8999 جنيه", img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e"},
+        {title:"جزمة نايك أير فورس الأصلية", price:"499 جنيه", img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff"},
+        {title:"ساعة آبل ووتش الترا 2", price:"29999 جنيه", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30"},
+        {title:"لاب توب ماك بوك برو M3 برو", price:"999 جنيه", img:"https://images.unsplash.com/photo-1546868871-7041f2a55e12"},
+        {title:"جزمة لويس فيتون أصلية جلد طبيعي", price:"48900 جنيه", img:"https://images.unsplash.com/photo-1560769629-975ec94e6a86"},
+        {title: "جزمة لويس فيتون LV Trainer أبيض", price: "58700 جنيه", img: "https://cdn.salla.sa/mQYoBq/9c7a27df-fc52-478c-86dc-4979a7ed8414-500x500-tSNdTmjrnze9ecbLawVYl5dngn66qCTxBCyBRrn0.jpg"},
+        {title: "Adidas Ultraboost 22", price: "1010 جنيه", img: "data:image/webp;base64,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"},
+        null,
         {title: "جزمة نايك أير ماكس 270 أسود", price: "٦٩٩ جنيه", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"},
         {title: "جزمة أديداس ألترا بوست 23 أبيض", price: "١٨٩٩ جنيه", img: "https://images.unsplash.com/photo-1562183241-b937e1de65e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"},
         {title: "جزمة كونفرس تشاك تايلور أسود مرتفع", price: "٤٤٩ جنيه", img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"},
@@ -854,35 +791,87 @@ async function sendChatMessage() {
   const message = input.value.trim();
   if (!message) return;
 
-  // عرض رسالة المستخدم
   addChatMessage(message, 'user');
   input.value = '';
 
-  // هنا هيتربط مع الـ Backend (Flask, Node.js, Python, etc.)
-  // مثال: fetch('/api/chat', { method: 'POST', body: JSON.stringify({message}) })
-  
-  // رد مؤقت لحد ما نربط الـ AI الحقيقي
-  setTimeout(() => {
-    const replies = [
-      "ثانية واحدة وأجيبلك أحسن العروض",
-      "تمام يا وحش! بجيبلك كل اللي يناسبك",
-      "عيوني! أنا شايفة إنك بتحب الحاجات الشيك",
-      "ده طلبك وأمرك يا ملك! لحظة وهتلاقي كل حاجة قدامك",
-      "أجمد زبون في مصر! أنا هخليك مبسوط أوي"
-    ];
-    addChatMessage(replies[Math.floor(Math.random() * replies.length)], 'bot');
-  }, 1000);
+  // رسالة "بيفكر"
+  const thinkingMsg = addChatMessage("نفرتيتي بتدورلك على أحسن حاجة...", 'bot');
+
+  try {
+    // 1. تنبؤ النية باستخدام Deep Learning
+    let predicted_intent = null;
+    try {
+      const dlRes = await fetch('/predict_intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+      });
+      const dlData = await dlRes.json();
+      predicted_intent = dlData.predicted_intent;
+    } catch (e) {
+      console.warn("Deep Learning غير متاح، هنستخدم النص بس");
+    }
+
+    // 2. إرسال للـ Backend مع النية
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        message,
+        predicted_intent  // مهم جدًا
+      })
+    });
+
+    const data = await res.json();
+
+    // امسح رسالة التفكير
+    thinkingMsg.remove();
+
+    // الرد النصي
+    addChatMessage(data.reply || "معلش، مش فاهمة طلبك.. قول تاني بالعامية؟", 'bot');
+
+    // الكروت - نفس الـ Style بالضبط
+    if (data.products && Array.isArray(data.products) && data.products.length > 0) {
+      data.products.forEach(p => {
+        const cardMessage = p.card_message || data.reply;
+        const card = `
+          <div style="margin:15px 0;padding:15px;background:#1e293b;border:2px solid #F59E0B;border-radius:18px;text-align:center;cursor:pointer;box-shadow:0 10px 30px rgba(245,158,11,0.3);transition:0.4s"
+               onclick="showProduct(${p.id || 1})">
+            <img src="${p.image_url || 'https://via.placeholder.com/300x200/F59E0B/000000?text=كوتشي+جامد'}" 
+                 style="width:100%;height:160px;object-fit:cover;border-radius:12px;">
+            <div style="margin-top:10px;color:#F59E0B;font-size:1.1rem;font-weight:bold">${p.title}</div>
+            <div style="color:white;font-size:1.3rem;margin:8px 0;font-weight:bold">${p.price} جنيه</div>
+            <div style="margin-top:8px;color:#e5e7eb;font-size:0.95rem;line-height:1.7">${cardMessage}</div>
+            <div style="background:#F59E0B;color:#0F172A;padding:8px 16px;border-radius:50px;font-weight:bold;margin-top:10px">
+              شوف التفاصيل
+            </div>
+          </div>`;
+        addChatMessage(card, 'bot-html');
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    thinkingMsg.remove();
+    addChatMessage("نفرتيتي وقعت في النيل.. السيرفر نايم، جرب تاني بعد دقيقة", 'bot');
+  }
 }
 
 function addChatMessage(text, type) {
   const body = document.getElementById('chatbotBody');
+  // امسح رسالة الترحيب لو في رسائل جديدة
+  if (body.querySelector('.welcome-message') && type !== 'bot') {
+    const welcomeMsg = body.querySelector('.welcome-message');
+    if (welcomeMsg) welcomeMsg.remove();
+  }
+  
   const div = document.createElement('div');
   div.className = `message ${type === 'user' ? 'user-message' : 'bot-message'}`;
-  div.innerHTML = `<p>${text}</p>`;
+  div.innerHTML = type === 'bot-html' ? text : `<p>${text}</p>`;
   body.appendChild(div);
   body.scrollTop = body.scrollHeight;
+  
+  return div; // مهم عشان نمسح رسالة التفكير
 }
-
 // إغلاق الشاتبوت لما نضغط بره
 document.addEventListener('click', (e) => {
   const chatbot = document.getElementById('nefertitiChatbot');
@@ -938,16 +927,7 @@ document.getElementById('chatbotInput').addEventListener('keypress', (e) => {
   <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Nefertiti&backgroundColor=F59E0B" alt="نفرتيتي" class="fab-avatar">
   <i class="fas fa-comment-dots"></i>
 </div>
+
+
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
